@@ -7,7 +7,11 @@ import { allCollections } from "@scripts/collection-utils";
     <a href={ Astro.site } class="title" >{SITE_TITLE}</a>
 
     {
-        allCollections.map((collection) => {
+        allCollections
+        .filter((collection) => {
+            return collection !== 'pages';
+        })
+        .map((collection) => {
             return <a href={ `${ Astro.site }${collection}/` } class="nav-link">{ collection }</a>;
         })
     }
