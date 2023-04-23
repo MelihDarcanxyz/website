@@ -1,3 +1,6 @@
+
+@use "sass:list";
+
 /**
  * Theme defaults
  */
@@ -69,45 +72,33 @@ body {
     color: var(--text);
 }
 
-h1 {
-    color: var(--iris);
-    &::before {
-        content: "# ";
-    }
-}
+/**
+ * Heading
+ */
 
-h2 {
-    color: var(--foam);
-    &::before {
-        content: "## ";
-    }
-}
+ $heading-colors: (
+    var(--iris),
+    var(--foam),
+    var(--rose),
+    var(--gold),
+    var(--pine),
+    var(--foam)
+);
 
-h3 {
-    color: var(--rose);
-    &::before {
-        content: "### ";
-    }
-}
+$heading-before-content: "###### ";
 
-h4 {
-    color: var(--gold);
-    &::before {
-        content: "#### ";
-    }
-}
+@for $i from 1 through 6 {
+    $len: str-length($heading-before-content);
 
-h5 {
-    color: var(--pine);
-    &::before {
-        content: "##### ";
-    }
-}
-
-h6 {
-    color: var(--foam);
-    &::before {
-        content: "###### ";
+    h#{$i} {
+        color: list.nth($heading-colors, $i);
+        &::before {
+            content: str-slice(
+                $heading-before-content,
+                $start-at: $len - $i,
+                $end-at: $len
+            );
+        }
     }
 }
 
