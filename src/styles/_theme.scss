@@ -1,6 +1,3 @@
-
-@use "sass:list";
-
 /**
  * Theme defaults
  */
@@ -91,7 +88,7 @@ $heading-before-content: "###### ";
     $len: str-length($heading-before-content);
 
     h#{$i} {
-        color: list.nth($heading-colors, $i);
+        color: nth($heading-colors, $i);
         &::before {
             content: str-slice(
                 $heading-before-content,
