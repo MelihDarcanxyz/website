@@ -1,0 +1,21 @@
+---
+export interface Props {
+    page: any,
+};
+
+const { page } = Astro.props as Props;
+---
+
+{
+    async () => {
+        if (page !== undefined) {
+
+        const { Content } = await page.render();
+
+        return (
+            <slot/>
+            <Content />
+        )
+        }
+    }
+}

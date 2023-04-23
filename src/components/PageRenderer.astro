@@ -1,0 +1,14 @@
+---
+import MarkdownLayout from '@layouts/MarkdownLayout.astro';
+
+export interface Props {
+    pagePage: any,
+};
+
+const { pagePage } = Astro.props as Props;
+const { data } = pagePage;
+---
+
+<MarkdownLayout page={ pagePage }>
+    <h1>{ data.title }</h1>
+</MarkdownLayout>
