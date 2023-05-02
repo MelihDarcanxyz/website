@@ -1,15 +1,10 @@
-@font-face {
-    font-family: "Profont";
-    font-display: swap;
-    src: url("/fonts/profont-mono.ttf");
-}
 
 :root {
     font-size: x-large;
 }
 
 body {
-    font-family: "Profont";
+    font-family: "Courier Prime" monospace;
     line-height: 1.25rem;
     margin: auto;
     width: 80%;
