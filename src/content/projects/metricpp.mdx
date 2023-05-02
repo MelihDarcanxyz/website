@@ -1,0 +1,36 @@
+---
+title: "metricpp"
+description: "A tool for static code analysis on C++ files"
+url: "https://github.com/projects-at-home/metricpp"
+actively_developed: true
+draft: true
+---
+
+## Motivation
+
+In one of my courses in the 6th semester, there was a given project.
+We had to find a open source software and do static code analysis on it.
+With that, we wanted to obtain some metrics.
+And use them to gain maintainability insights about the project.
+Our team decided to do the analysis on [DOSBox Staging](https://github.com/dosbox-staging/dosbox-staging).
+The project was mostly written with C++.
+But, we couldn't find any reliable and free C++ static code analyzer to obtain metrics.
+They were either commercial (it was just a one time school project), or obsolete/not working.
+So we've gone with [LibrePlan](https://github.com/LibrePlan/libreplan) as it was written with java mostly.
+There were plenty of tools to get what we wanted with java.
+
+But I really wanted to contribute to DOSBox (and hopefully [Music Player Daemon](https://github.com/MusicPlayerDaemon/MPD)).
+So the motivation here is to develop a software to obtain C++ metrics in a free and a reliable way.
+
+## Method
+
+My initial thought was to implement a C++ parser with python,
+and use it to calculate C&K, Halstead software metrics.
+But in a relatively short time, I realized parsing C++ is not an easy task.
+Also, there was no use to reinvent the wheel.
+
+Right now, I see that I can use clang python bindings or something like that.
+Maybe I can do it in C++, I don't know yet.
+Python was my first choice,
+because I'm already very familiar with it and it's faster to develop with it.
+Since I know Java and C++ too, they're on the table too.
