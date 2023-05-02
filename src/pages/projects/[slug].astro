@@ -10,13 +10,6 @@ export async function getStaticPaths() {
     return projectsCollection.map((project) => {
         let { slug } = project;
 
-        if (slug === "index") {
-            return {
-                params: { slug: undefined },
-                props: { project: project },
-            };
-        }
-
         return {
             params: { slug: slug },
             props: { project: project },
