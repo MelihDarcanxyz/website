@@ -14,16 +14,12 @@ import pagefind from 'astro-pagefind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:3000/",
+  site: "https://melihdarcan.xyz",
   integrations: [mdx(), robotsTxt(), sitemap(), pagefind()],
   markdown: {
     shikiConfig: {
       // https://github.com/shikijs/shiki/blob/main/docs/themes.md
       theme: 'rose-pine-moon',
-      // Add custom languages
-      // Note: Shiki has countless langs built-in, including .astro!
-      // https://github.com/shikijs/shiki/blob/main/docs/languages.md
-      langs: ['python'],
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
     },
