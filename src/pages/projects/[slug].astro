@@ -1,0 +1,52 @@
+---
+// Layout imports
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+
+export async function getStaticPaths() {
+    const projectsCollection = await getCollection("projects");
+
+    return projectsCollection.map((project) => {
+        let { slug } = project;
+
+        if (slug === "index") {
+            return {
+                params: { slug: undefined },
+                props: { project: project },
+            };
+        }
+
+        return {
+            params: { slug: slug },
+            props: { project: project },
+        };
+    });
+}
+
+const { project } = Astro.props;
+const { data } = project;
+console.log(data.title);
+---
+
+<MainLayout>
+    <MarkdownLayout page={project}>
+        <h1>{data.title}</h1>
+
+        <p>
+            {data.description}
+            <br />
+            This project <span class={data.actively_developed && "love"}
+                >is</span
+            >
+            {!data.actively_developed && <span class="love">not</span>} actively
+            developed
+            <br />
+            Access from <a
+                href={data.url}
+                target="_blank"
+                rel="noopener noreferrer">here</a
+            >
+        </p>
+    </MarkdownLayout>
+</MainLayout>
