@@ -1,9 +1,15 @@
+@font-face {
+    font-family: "Profont";
+    font-display: swap;
+    src: url("/fonts/profont-mono.ttf");
+}
 
 :root {
     font-size: x-large;
 }
 
 body {
+    font-family: "Profont";
     line-height: 1.25rem;
     margin: auto;
     width: 80%;
@@ -18,27 +24,25 @@ header {
     width: 100%;
 }
 
-$heading-font-sizes: (
-    2rem,
-    1.5rem,
-    1.17rem,
-    1rem,
-    0.83rem,
-    0.67rem
-);
+$heading-font-sizes: (2rem, 1.5rem, 1.17rem, 1rem, 0.83rem, 0.67rem);
 
 @for $i from 1 through 6 {
     h#{$i} {
         border-bottom: 0.1rem solid;
         font-size: nth($list: $heading-font-sizes, $n: $i);
+        font-weight: 900-(100 * (1 - $i));
         margin: 1.5rem 0rem;
         padding: 0rem 0rem 1rem 0rem;
+
+        a {
+            color: inherit;
+        }
     }
 }
 
 p {
     margin: 1rem 0rem;
-    text-indent: 1rem;
+    // text-indent: 2rem;
 }
 
 footer {
