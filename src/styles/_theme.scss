@@ -1,4 +1,4 @@
-/**
+/*
  * Theme defaults
  */
 
@@ -39,7 +39,7 @@ $dark: (
     "highlight-high": #524f67,
 );
 
-/**
+/*
  * Conversion to css variables
  * to better handle situational changes
  */
@@ -59,7 +59,16 @@ $dark: (
     }
 }
 
-/**
+/*
+ * Color classes
+ */
+@each $color-name, $color-code in $light {
+    .#{$color-name} {
+        color: var(--#{$color-name});
+    }
+}
+
+/*
  * Apply theme to page
  * Profit
  */
@@ -69,7 +78,7 @@ body {
     color: var(--text);
 }
 
-/**
+/*
  * Heading
  */
 
@@ -101,4 +110,8 @@ $heading-before-content: "###### ";
 
 a {
     color: var(--iris);
+}
+
+blockquote {
+    background-color: var(--overlay);
 }
