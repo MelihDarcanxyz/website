@@ -1,6 +1,6 @@
 
 :root {
-    font-size: x-large;
+    font-size: larger;
 }
 
 body {
@@ -50,5 +50,12 @@ pre {
         border: 0.1rem dashed var(--rose);
         margin: 1rem 0rem;
         padding: 1rem;
+    }
+}
+
+a {
+    &:hover {
+        color: var(--gold);
+        transition: ease-in-out 0.1s;
     }
 }
