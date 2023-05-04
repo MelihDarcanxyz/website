@@ -3,16 +3,15 @@ import { allCollections } from "@scripts/collection-utils";
 ---
 
 <header>
-    <a href="/" class="title" >home</a>
-
+    <a href="/">home</a>
     {
         allCollections
         .filter((collection) => {
             return collection !== 'pages';
         })
         .map((collection) => {
-            return <a href={ `/${collection}/` } class="nav-link">{ collection }</a>;
+            return <a href={ `/${collection}/` }>{ collection }</a>;
         })
     }
-
+    <a href="/resume">resume</a>
 </header>
