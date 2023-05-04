@@ -1,0 +1,27 @@
+
+.neofetch {
+    border: 1px solid var(--gold);
+    padding: 1rem;
+
+    &__command {
+        p {
+            margin: 0rem;
+        }
+    }
+    
+    &__stdout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__image {
+        flex-grow: 0;
+        margin: 0rem auto;
+    }
+
+    &__text {
+        flex-grow: 99;
+    }
+}

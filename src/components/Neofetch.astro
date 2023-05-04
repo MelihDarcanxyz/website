@@ -1,0 +1,58 @@
+---
+import ASCIIPortrait from "./ASCIIPortrait.astro";
+const neofetchText: object = {
+    "Full Name": "Melih DARCAN",
+    "Codename": "Melo",
+    "Status": "Alive",
+    "Species": "Human",
+    "Rank": "Undergraduate",
+    "Specialty": "Artificial Intelligence Engineering",
+    "Affiliation": "Hacettepe University Biological Data Science Laboratory",
+};
+
+const contacts: object = {
+    "github": "https://github.com/MelihDarcanxyz",
+    "linkedin": "https://www.linkedin.com/in/melih-d-6203b71b7/",
+};
+---
+
+<div class="neofetch">
+    <div class="neofetch__command">
+        <p>[melih@home <span class="love">~</span>]$ neofetch</p>
+    </div>
+    <div class="neofetch__stdout">
+        <div class="neofetch__image"><ASCIIPortrait /></div>
+        <div class="neofetch__text">
+            {
+                Object.entries(neofetchText).map((entry) => {
+                    let key = entry[0];
+                    let value = entry[1];
+
+                    return (
+                        <p>
+                            <span class="foam">{key}</span>: {value}
+                        </p>
+                    );
+                })
+            }
+            <p>
+                <span class="foam">Contacts</span>:
+                {
+                    Object.entries(contacts).map((entry) => {
+                        let key = entry[0];
+                        let value = entry[1];
+
+                        return (
+                            <a
+                                href={value}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >{key}</a>
+                            <span> </span>
+                        );
+                    })
+                }
+            </p>
+        </div>
+    </div>
+</div>
