@@ -1,0 +1,23 @@
+---
+import { education } from "@data/personal-data";
+import ResumeSection from "./ResumeSection.astro";
+---
+
+<ResumeSection title="Education" level={1}>
+    {
+        education.map((element) => {
+            return (
+                <ResumeSection title={element.school} level={2}>
+                    <p>
+                        {element.specialty}
+                        <br />
+                        {element.rank}
+                        <br />
+                        <br />
+                        {element.date}
+                    </p>
+                </ResumeSection>
+            );
+        })
+    }
+</ResumeSection>

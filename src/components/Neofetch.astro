@@ -1,30 +1,22 @@
 ---
 import ASCIIPortrait from "./ASCIIPortrait.astro";
-const neofetchText: object = {
-    "Full Name": "Melih DARCAN",
-    "Codename": "Melo",
-    "Status": "Alive",
-    "Species": "Human",
-    "Rank": "Undergraduate",
-    "Specialty": "Artificial Intelligence Engineering",
-    "Affiliation": "Hacettepe University Biological Data Science Laboratory",
-};
+import { contacts, neofetch } from "@data/personal-data";
 
-const contacts: object = {
-    "github": "https://github.com/MelihDarcanxyz",
-    "linkedin": "https://www.linkedin.com/in/melih-d-6203b71b7/",
-};
+export const getFirstName = (fullName) => {
+    const firstName = fullName.split(" ")[0];
+    return firstName.toLowerCase();
+}
 ---
 
 <div class="neofetch">
     <div class="neofetch__command">
-        <p>[melih@home <span class="love">~</span>]$ neofetch</p>
+        <p>[{getFirstName(neofetch["Full Name"])}@home <span class="love">~</span>]$ neofetch</p>
     </div>
     <div class="neofetch__stdout">
         <div class="neofetch__image"><ASCIIPortrait /></div>
         <div class="neofetch__text">
             {
-                Object.entries(neofetchText).map((entry) => {
+                Object.entries(neofetch).map((entry) => {
                     let key = entry[0];
                     let value = entry[1];
 
@@ -38,16 +30,14 @@ const contacts: object = {
             <p>
                 <span class="foam">Contacts</span>:
                 {
-                    Object.entries(contacts).map((entry) => {
-                        let key = entry[0];
-                        let value = entry[1];
+                    contacts.map((entry) => {
 
                         return (
                             <a
-                                href={value}
+                                href={entry.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                            >{key}</a>
+                            >{entry.name}</a>
                             <span> </span>
                         );
                     })

@@ -1,0 +1,12 @@
+---
+import { neofetch } from "@data/personal-data";
+
+const codename: string = neofetch["Codename"].toUpperCase();
+const fullName: string = neofetch["Full Name"].toUpperCase();
+---
+
+<div class="resume__header flex-container">
+    <span>{codename}(1)</span>
+    <h1>{fullName}'s Manual</h1>
+    <span>{codename}(1)</span>
+</div>

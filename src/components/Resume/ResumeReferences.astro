@@ -1,0 +1,23 @@
+---
+import { references } from "@data/personal-data";
+import ResumeSection from "./ResumeSection.astro";
+---
+
+<ResumeSection title="References" level={1}>
+    {
+        references.map((reference) => {
+            return (
+                <ResumeSection title={reference.name} level={2}>
+                    <p>
+                        {reference.title}
+                        { reference.about && <br /> <a 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={reference.about}>About</a>}
+                    </p>
+
+                </ResumeSection>
+            );
+        })
+    }
+</ResumeSection>

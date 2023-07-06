@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import ResumeSection from "./ResumeSection.astro";
+
+type project = {
+    name: string;
+    description: string;
+    url: string;
+};
+
+const projects: Array<project> = (await getCollection("projects"))
+    .filter((project) => {
+        return !project.data.draft;
+    })
+    .map((project) => {
+        return {
+            name: project.data.title,
+            description: project.data.description,
+            url: project.data.url,
+        };
+    });
+---
+
+<ResumeSection title="Projects" level={1}>
+    {
+        projects.map((project) => {
+            return (
+                <ResumeSection title={project.name} level={2}>
+                    <p>{project.description}</p>
+                    <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Source
+                    </a>
+                </ResumeSection>
+            );
+        })
+    }
+</ResumeSection>

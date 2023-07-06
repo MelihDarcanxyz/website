@@ -1,8 +1,53 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-
+import ResumeEducation from "@components/Resume/ResumeEducation.astro";
+import ResumeHeader from "@components/Resume/ResumeHeader.astro";
+import ResumeSection from "@components/Resume/ResumeSection.astro";
+import ResumeListSection from "@components/Resume/ResumeListSection.astro";
+import { interests, hobbies, familiarWith, goodAt, languages, contacts, achievements } from "@data/personal-data";
+import ResumeLinkListSection from "@components/Resume/ResumeLinkListSection.astro";
+import ResumeExperiences from "@components/Resume/ResumeExperiences.astro";
+import ResumeProjects from "@components/Resume/ResumeProjects.astro";
+import ResumeFooter from "@components/Resume/ResumeFooter.astro";
+import ResumeReferences from "@components/Resume/ResumeReferences.astro";
 ---
 
 <MainLayout>
-    
+    <div class="resume">
+
+        <ResumeHeader/>
+
+        <ResumeSection title="About" level={1}>
+            <p>
+                Hi, I'm Melih, a homo sapiens with never-ending curiosity towards anything and everything.
+                I don't mind learning new tools or even programming languages to get my way.
+                May be a little bit obsessed with optimization, security, and privacy.
+                Just let me do my thing.
+            </p>
+        </ResumeSection>
+
+        <ResumeLinkListSection title="Contacts" level={1} list={contacts} />
+        
+        <ResumeEducation/>
+
+        <ResumeExperiences/>
+
+        <ResumeListSection title="Good at" level={1} list={goodAt}></ResumeListSection>
+        
+        <ResumeListSection title="Familiar with" level={1} list={familiarWith}></ResumeListSection>
+
+        <ResumeListSection title="Interests" level={1} list={interests}/>
+        
+        <ResumeLinkListSection title="Achievements" level={1} list={achievements}></ResumeLinkListSection>
+        
+        <ResumeListSection title="Languages" level={1} list={languages}></ResumeListSection>
+        
+        <ResumeProjects/>
+        
+        <ResumeListSection title="Hobbies" level={1} list={hobbies}></ResumeListSection>
+
+        <ResumeReferences/>
+
+        <ResumeFooter/>
+    </div>
 </MainLayout>

@@ -1,0 +1,29 @@
+@media print {
+    header,
+    footer {
+        display: none;
+    }
+    :root {
+        font-size: 16px;
+    }
+    html,
+    body,
+    main {
+        margin: 0;
+        width: 100%;
+        color: black;
+        background-color: white;
+    }
+
+    a {
+        &::after {
+            color: rgba(0, 0, 255, 0.4);
+            content: " (" attr(href) ") ";
+            text-decoration: underline;
+        }
+    }
+}
+@page {
+    size: A4;
+    margin: 1.3cm 1.3cm 1.7cm 1.6cm;
+}

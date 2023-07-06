@@ -1,0 +1,117 @@
+.resume {
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            border: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 900;
+            margin: 1rem 0rem 1rem 0rem;
+            padding: 0rem;
+            text-transform: uppercase;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    ul {
+        li {
+            &::before {
+                color: var(--gold);
+                content: "~> ";
+            }
+        }
+    }
+
+    a {
+        color: var(--foam);
+    }
+
+    &__header {
+        span:first-of-type {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        span:last-of-type {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        h1 {
+            flex-grow: 1;
+            margin: 0rem;
+            text-align: center;
+        }
+
+        margin-bottom: 3rem;
+    }
+
+    /*
+    * Heading settings to resemble manpages
+    */
+
+    &__section {
+
+        $base-indent: 1rem;
+
+        @for $i from 2 through 6 {
+            $heading-indent: $i - 2;
+            $body-indent: $i - 1;
+
+            h#{$i} {
+                color: var(--love);
+                padding-left: $heading-indent * $base-indent;
+            }
+
+            .indent-level-#{$body-indent} {
+                padding-left: $body-indent * $base-indent;
+            }
+        }
+
+        .flex-container {
+            li {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    &__footer {
+        display: none;
+    }
+}
+
+@media print {
+    .resume {
+        @for $i from 1 through 6 {
+            h#{$i} {
+                color: rgba(255, 0, 0, 0.75);
+                break-after: avoid;
+            }
+        }
+
+        ul {
+            li {
+                &::before {
+                    color: green;
+                }
+            }
+        }
+
+        a {
+            color: rgba(0, 0, 255, 0.75);
+        }
+
+        &__header {
+            h1 {
+                color: black;
+            }
+        }
+
+        &__footer {
+            display: block;
+        }
+    }
+}

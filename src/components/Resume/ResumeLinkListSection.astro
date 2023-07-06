@@ -1,0 +1,49 @@
+---
+import ResumeSection from "./ResumeSection.astro";
+import { link } from "@data/personal-data";
+
+export interface Props {
+    title: string;
+    level: number;
+    list: Array<link>;
+}
+
+const { title, level, list } = Astro.props as Props;
+---
+
+<ResumeSection title={title} level={level}>
+    <slot />
+
+    <ul>
+        {
+            list.map((link) => {
+                return (
+                    <li>
+                        <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</ResumeSection>
+
+<style lang="scss">
+    @media print {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 1rem;
+
+            li {
+                flex-grow: 1;
+            }
+        }
+    }
+</style>
