@@ -1,8 +1,19 @@
 ---
+import CardList from "@components/CardList.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
+const blogCollection = await getCollection("blog");
 ---
 
 <MainLayout>
-    
+    <h1>Blog</h1>
+    <p>
+        This is where my thoughts, ideas, accomplishments brew. </br>
+        Stay in touch
+    </p>
+
+    <CardList pages={ blogCollection.filter((blog) => {
+        return !blog.data.draft
+    }) }/>
 </MainLayout>

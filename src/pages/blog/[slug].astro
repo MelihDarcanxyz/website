@@ -1,0 +1,26 @@
+---
+// Layout imports
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+
+export async function getStaticPaths() {
+    const blogCollection = await getCollection("blog");
+
+    return blogCollection
+    .filter((blog) => {
+        return !blog.data.draft;
+    })
+    .map((blog) => {
+        let { slug } = blog;
+
+        return {
+            params: { slug: slug },
+            props: { blog: blog },
+        };
+    });
+}
+
+const { blog } = Astro.props;
+const { data } = blog;
+---
