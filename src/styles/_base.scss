@@ -25,7 +25,7 @@ $heading-font-sizes: (2rem, 1.5rem, 1.17rem, 1rem, 0.83rem, 0.67rem);
     h#{$i} {
         border-bottom: 0.1rem solid;
         font-size: nth($list: $heading-font-sizes, $n: $i);
-        font-weight: 900-(100 * (1 - $i));
+        font-weight: 400+(100 * (6 - $i));
         margin: 1.5rem 0rem;
         padding: 0rem 0rem 1rem 0rem;
 
