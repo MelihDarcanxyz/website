@@ -29,7 +29,7 @@ const blogCollection = defineCollection({
     description: z.string(),
     date: z.date(),
     tags: z.array(validTags).transform((arr) => new Set(arr)),
-    image: z.string().url(),
+    image: z.string().optional(),
     draft: z.boolean()
   })
 })
@@ -46,9 +46,20 @@ const projectsCollection = defineCollection({
   }),
 });
 
+const portfolioCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    url: z.string().url(),
+    image: z.string().optional(),
+    draft: z.boolean(),
+  }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-  'pages': pagesCollection,
   'blog': blogCollection,
-  'projects': projectsCollection
+  'pages': pagesCollection,
+  'portfolio': portfolioCollection,
+  'projects': projectsCollection,
 };
