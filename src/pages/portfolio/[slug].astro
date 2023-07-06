@@ -1,0 +1,33 @@
+---
+// Layout imports
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import Tags from "@components/Tags.astro";
+
+export async function getStaticPaths() {
+    const portfolioCollection = await getCollection("portfolio");
+
+    return portfolioCollection
+    .filter((portfolio) => {
+        return !portfolio.data.draft;
+    })
+    .map((portfolio) => {
+        let { slug } = portfolio;
+
+        return {
+            params: { slug: slug },
+            props: { portfolio: portfolio },
+        };
+    });
+}
+
+const { portfolio } = Astro.props;
+const { data } = portfolio;
+---
+
+<MainLayout>
+    <MarkdownLayout page={portfolio}>
+        <h1>{portfolio.data.title}</h1>
+    </MarkdownLayout>
+</MainLayout>

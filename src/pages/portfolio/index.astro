@@ -1,8 +1,18 @@
 ---
+import CardList from "@components/CardList.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
+const portfolioCollection = await getCollection("portfolio");
 ---
 
 <MainLayout>
-    
+    <h1>Portfolio</h1>
+    <p>
+        These are my projects on display to get hired.
+    </p>
+
+    <CardList pages={ portfolioCollection.filter((portfolio) => {
+        return !portfolio.data.draft
+    }) }/>
 </MainLayout>
