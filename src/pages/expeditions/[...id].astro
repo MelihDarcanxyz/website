@@ -1,0 +1,38 @@
+---
+import EntryItem from "@components/collections/EntryItem.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getDayMonthYear } from "@scripts/utils";
+import { getCollection, render, getEntries } from "astro:content";
+
+export async function getStaticPaths() {
+  const expeditions = await getCollection("expeditions");
+  return expeditions.map((expedition) => ({
+    params: { id: expedition.id },
+    props: { expedition },
+  }));
+}
+
+const { expedition } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(expedition);
+const entries = await getEntries(expedition.data.relatedEntries);
+---
+
+<BaseLayout>
+  <div
+    class="max-w-full prose max-sm:prose-sm lg:prose-lg bg-base-200 md:p-6 lg:p-8 prose-headings prose-headings:before:text-gray-600 prose-headings:hover:before:text-accent prose-headings:before:content-['#'] prose-headings:before:mr-2 sm:prose-headings:before:mr-4 sm:prose-th:before:content-none"
+  >
+    <div class="p-5 py-8 mx-auto max-w-5xl">
+      <h1>{expedition.data.title}</h1>
+      <p class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-100">Last updated on {remarkPluginFrontmatter.lastModified} | {expedition.data.relatedEntries.length} entries</p>
+      <Content />
+    </div>
+  </div>
+
+  <div class="p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+    {
+      entries.map((entry, entryIdx) => {
+        return <EntryItem entry={entry} entryIdx={entryIdx}/>;
+      })
+    }
+  </div>
+</BaseLayout>

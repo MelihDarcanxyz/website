@@ -1,0 +1,32 @@
+---
+import ExpeditionItem from "@components/collections/ExpeditionItem.astro";
+import Hero from "@components/Hero.astro";
+import HeroDescription from "@components/HeroDescription.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getIconByTitle } from "@scripts/utils";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const expeditions: CollectionEntry<"expeditions">[] =
+  await getCollection("expeditions");
+const iconName = getIconByTitle("expeditions");
+---
+
+<BaseLayout>
+  <Hero title="Expeditions" iconName={iconName}>
+    <HeroDescription>
+      These expeditions represent focused explorations into uncharted domains -
+      deep dives into challenging territories and rigorous studies of the
+      unknown. Each expedition is carefully planned to build upon foundational
+      knowledge and uncover new insights. Choose your destination and join the
+      journey!
+    </HeroDescription>
+  </Hero>
+
+  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+    {
+      expeditions.map((expedition) => {
+        return <ExpeditionItem expedition={expedition} />;
+      })
+    }
+  </div>
+</BaseLayout>

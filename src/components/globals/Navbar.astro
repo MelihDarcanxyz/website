@@ -1,0 +1,86 @@
+---
+import type { MenuLink } from "@types";
+
+interface Props {
+  title: string;
+  navbarLinks: MenuLink[];
+}
+const { title, navbarLinks } = Astro.props;
+import Logo from "@assets/eagle-0.svg";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="shadow-sm navbar bg-base-100">
+  <div class="navbar-start">
+    <a href="/" class="inline-flex ml-5 duration-300 fill-gray-500 hover:fill-accent">
+      <Logo class="w-12 h-12 scale-x-[-1]" />
+      <span class="my-auto text-xl font-bold" >{title}</span>
+      </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="flex-none navbar-end sm:hidden">
+    <div class="dropdown dropdown-end">
+      <div
+        tabindex="0"
+        role="button"
+        class="mr-5 cursor-pointer linear lg:hidden"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"></path>
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="p-2 mt-3 shadow menu menu-sm dropdown-content bg-base-300 rounded-box z-1"
+      >
+        {
+          navbarLinks.map((navbarLink) => {
+            return (
+              <li class="link link-hover">
+                <a class="hover:bg-transparent group" href={navbarLink.path}>
+                  {navbarLink.icon && (
+                  <Icon name={navbarLink.icon} class="mx-auto mb-2 w-8 h-8 text-gray-500 duration-300 group-hover:text-accent" />
+                  )}
+                  {navbarLink.title}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <!-- Desktop Menu -->
+  <ul
+    class="hidden px-1 mr-5 text-md navbar-end sm:flex divide-accent divide-x-1"
+  >
+    {
+      navbarLinks.map((navbarLink) => {
+        return (
+          <li class="link link-hover">
+            <a class="inline-flex gap-2 px-3 align-middle group hover:bg-transparent" href={navbarLink.path}>
+              {navbarLink.icon && (
+                  <Icon name={navbarLink.icon} class="w-6 h-6 text-gray-500 duration-300 group-hover:text-accent" />
+                )}
+              <span>
+                {navbarLink.title}
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

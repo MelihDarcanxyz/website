@@ -1,0 +1,16 @@
+
+- title: "Protein language models for predicting drug–target interactions: Novel approaches, emerging methods, and future directions"
+  date: "Apr 2025"
+  id: a
+  url: "https://doi.org/10.1016/j.sbi.2025.103017"
+  authors:
+    - name: "Atabey Ünlü"
+      firstAuthor: true
+    - name: "Erva Ulusoy"
+      firstAuthor: true
+    - name: "Melih Gökay Yiğit"
+      firstAuthor: true
+    - name: "Melih Darcan"
+      firstAuthor: true
+    - name: "Tunca Doğan"
+      correspondingAuthor: true

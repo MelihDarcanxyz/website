@@ -1,16 +1,31 @@
 ---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
+import { siteConfig, socialLinks } from "@site.config";
+
+import Logo from "@assets/eagle-1.svg";
+import SocialLinks from "@components/SocialLinks.astro";
+import HeroDescription from "@components/HeroDescription.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Hero
+    title={siteConfig.title}
+    Logo={Logo}
+  >
+    <HeroDescription>
+      Welcome, fellow explorer! I'm charting a course through fascinating
+      territories - Machine Learning, Mathematics, Art, and beyond. Think of
+      this as our shared expedition; we'll be navigating the challenging
+      landscapes of machine learning, armed with the foundational knowledge
+      gained from our journey through the valley of mathematics. Along the way,
+      we might pause to sketch some paintings or compose a melody - unexpected
+      discoveries often lie just around the corner! This won't always be easy -
+      there will be uncharted territories and formidable challenges ahead. But
+      together, we'll learn to face them, overcome obstacles, and return richer
+      from the experience.
+    </HeroDescription>
+    <SocialLinks />
+  </Hero>
+</BaseLayout>

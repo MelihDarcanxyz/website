@@ -1,0 +1,93 @@
+---
+title: Introduction to Virtual Humans
+date: 19 Dec 2024
+description: "Creating realistic virtual humans: challenges in pose/shape estimation & advancements using parametric models & new tech like LLMs."
+---
+
+## Goals
+
+### 2D / 3D Joint Estimation
+
+We want to estimate joint positions on 2D/3D space, so we can use these estimated key-points on various downstream tasks such as action recognition or sports analysis. While this gives us a great simplification and a proxy to deal with mentioned tasks, they are lacking. Because, we do not interact with the world with our bones. Our bones do not touch the world. So perhaps, we need a better way to model our skin too.
+
+### Shape Estimation
+
+Our body, is a 3D deformable object. We want to estimate how it looks, and how it looks when it deforms. In a simpler manner, we want to model how our skin looks.
+
+## Challenges
+
+### Loss of Depth
+
+Most of the videos we have are monocular videos, meaning they're recorded with only one camera. We lose depth, which is present in every 3D object (like everything in our universe, to our knowledge). Losing the depth, it's a lot harder to estimate the position of anything in a 3 dimensional (3D) space. Thus, various models are still being developed for various downstream tasks. You can check [Depth Anything V2](https://arxiv.org/abs/2406.09414) or [Depth Pro: Sharp Monocular Metric Depth in Less Than a Second](https://arxiv.org/abs/2410.02073) papers if you wish to.
+
+### Bones are Hard to Annotate
+
+Some datasets are built with the intention of 2D/3D key-point estimation. Only joint positions are annotated in given image/video. So, a question raises, how can we annotate these joints? For example, can you know where your hipbone is, in 3D space, just by looking at an image? No. Let's say you can, then how can you train other annotators to annotate the data the exact way you do? It turns out, annotating bones is a hard task to undertake.
+
+### Self Occlusion
+
+Self occlusion is another problem that's caused by monocular setups. Let's say you've hid your hand behind your back. There's no way for me to know what you're doing with your hand, right? So, the best thing I can do is to take a guess with the previous knowledge I have. To handle this problem while dealing with videos, temporal data can be accounted and a data driven approach can be followed. There are other approaches like applying Inverse Kinematics to find which pose is most likely. Here is a recent paper utilizing Riemannian Distance Fields, [NRDF: Neural Riemannian Distance Fields for Learning Articulated Pose Priors](https://arxiv.org/abs/2403.03122).
+
+Our bodies are not the only source of self occlusion. If our clothes include some parts detach from the body, they can cause self occlusion too, while they swing to left and right.
+
+Finally, even though multi-view camera setup helps in the case of self occlusion, the challenge will not simply go away. It depends on the camera count, and the pose of the human.
+
+### Loose Clothing
+
+I felt so desperate when I first faced with this challenge. At that time, I was working on a dataset creation, therefore annotating joints of a person in a video. But... Her skirt was too loose. There was no way for me to know where her knee was or what was her knee's shape was. All I could do was to guess. So, as you already understood, this is a challenge we face whenever a cloth is too loose, and it makes finding the position of a joint or the shape of a body part harder for us. Luckily, this is a studied area too, you can check [Neural Point-based Shape Modeling of Humans in Challenging Clothing](https://arxiv.org/abs/2209.06814).
+
+## Datasets
+
+- [FAUST](https://ieeexplore.ieee.org/document/6909880): 3D scans of people created for 3D Human Mesh registration.
+- [DFAUST](https://ieeexplore.ieee.org/document/8100074): FAUST, this time people are in motion.
+- [BEDLAM](https://arxiv.org/abs/2306.16940): This dataset consists of synthetic humans, performing detailed and realistic animations which is interesting because synthetic data is always cheaper and faster to get. According to the paper, it's possible to get SOTA results.
+- [3DPW](https://link.springer.com/chapter/10.1007/978-3-030-01249-6_37): This is a particularly interesting dataset, due to the in the wild data collection, and dealing with IMUs' drift problem with machine learning.
+
+## Parametric Human Models
+
+AI models don't need to learn everything from scratch right? We already know plenty about our bodies. Just like in physics informed machine learning, we can inform our models with prior knowledge. This will not only help the models to converge faster, they will also be more accurate, and less likely to produce non-valid poses.
+
+### Earlier Studies
+
+Earlier studies to represent humans, made use of primitive objects like cylinders and rectangular boxes. They were innovative for their time, and the idea of using primitive objects to define complex objects are still being used. You can check these two papers: [Using relaxation to find a puppet](https://dl.acm.org/doi/10.5555/3015508.3015523), [Representation and recognition of the spatial organization of three-dimensional shapes](https://royalsocietypublishing.org/doi/10.1098/rspb.1978.0020).
+
+### SMPL
+
+SMPL is an additive linear parametric model, with various parameters. First of all, we have a T, template human model. This template is obtained by getting the mean of scanned 3D humans.
+
+Adding ***b (beta)*** parameters to ***T***, will make it's shape change, such as: height, mass, arm length, leg length, neck thickness, etc. Think of this as ***(T + b)***.
+
+Adding ***o (theta)*** parameters will help with pose dependent muscle changes. Like the bulge effect on on your shoulders when you raise your arms. Think of this as ***(T + b + o)***.
+
+You can read the SMPL paper: [SMPL: a skinned multi-person linear model](https://dl.acm.org/doi/10.1145/2816795.2818013)
+
+### SMPL+H
+
+SMPL+H is basically SMPL with hand parameters extension.
+
+You can read the SMPL+H paper: [Embodied Hands: Modeling and Capturing Hands and Bodies Together](http://arxiv.org/abs/2201.02610)
+
+### SMPL-X
+
+SMPL-X is basically SMPL with feet, face, and hand parameters extension.
+
+You can read the SMPL-X paper: [Expressive Body Capture: 3D Hands, Face, and Body From a Single Image](https://ieeexplore.ieee.org/document/8953319)
+
+## Humans in Clothing
+
+Most of the time, our bodies can't be thought without clothes. However, they pose another layer of challenge. They can move semi-independently from body, they crease, and depending on the clothing type, they move left and right. We need ways to model, represent, and generate them to understand human behavior better. Here are several studies making use of humans in clothing:
+
+- [GarmentCode: Programming Parametric Sewing Patterns](https://arxiv.org/abs/2306.03642)
+- [TryOffDiff: Virtual-Try-Off via High-Fidelity Garment Reconstruction using Diffusion Models](https://arxiv.org/abs/2411.18350)
+- [ContourCraft: Learning to Resolve Intersections in Neural Multi-Garment Simulations](http://arxiv.org/abs/2405.09522)
+
+## Future Directions
+
+As always, new technologies are emerging, and Virtual Humans will get a piece from them. Actually, it already did to some extent. Here are relatively new papers by topic:
+
+- Gaussian Splatting:
+    - [3DGS-Avatar: Animatable Avatars via Deformable 3D Gaussian Splatting](http://arxiv.org/abs/2312.09228)
+    - [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering](http://arxiv.org/abs/2310.08528)
+    - [Human 3Diffusion: Realistic Avatar Creation via Explicit 3D Consistent Diffusion Models](http://arxiv.org/abs/2406.08475)
+- LLM:
+    - [ChatPose: Chatting about 3D Human Pose](https://arxiv.org/abs/2311.18836v2)

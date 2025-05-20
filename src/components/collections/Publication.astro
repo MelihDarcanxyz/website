@@ -1,0 +1,24 @@
+---
+interface Props {
+  publication: CollectionEntry<"publications">;
+}
+
+import { constructAuthorString, getMonthYear } from "@scripts/utils";
+import { siteConfig } from "@site.config";
+import type { CollectionEntry } from "astro:content";
+const { publication } = Astro.props;
+
+const authorString = constructAuthorString(publication.data.authors)
+const dateString = getMonthYear(publication.data.date)
+---
+
+<div class="flex flex-col gap-4 p-4 group">
+  <h3 class="underline group-hover:decoration-accent">
+    <a href={publication.data.url} target="_blank"
+      >{publication.data.title}</a>
+  </h3>
+  <p class="text-sm" set:html={authorString}/>
+  <p class="text-sm">
+    {dateString}
+  </p>
+</div>

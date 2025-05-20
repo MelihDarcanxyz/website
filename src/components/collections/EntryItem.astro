@@ -1,0 +1,23 @@
+---
+/**
+ * EntryItem is a component that displays a single entry item in the Entries landing page.
+ */
+
+import { getDayMonthYear } from "@scripts/utils";
+import { render, type CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"entries">;
+  entryIdx?: number
+}
+
+const { entry, entryIdx } = Astro.props;
+const dateString = getDayMonthYear(entry.data.date);
+
+---
+
+<div class="flex flex-col gap-4 p-8">
+  <h2><a href=`/entries/${entry.id}`>{typeof entryIdx === "number" && <span>{entryIdx + 1}.&nbsp</span>}{entry.data.title}</a></h2>
+  <p class="text-sm">{dateString}</p>
+  <p class="text-sm">{entry.data.description}</p>
+</div>

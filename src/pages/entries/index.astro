@@ -1,0 +1,37 @@
+---
+import EntryItem from "@components/collections/EntryItem.astro";
+import Hero from "@components/Hero.astro";
+import HeroDescription from "@components/HeroDescription.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getIconByTitle, sortEntriesByNewest } from "@scripts/utils";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+const entries: CollectionEntry<"entries">[] = sortEntriesByNewest(await getCollection("entries")).filter((entry) => import.meta.env.DEV || (entry.data.date <= new Date() && !entry.data.draft));
+const iconName = getIconByTitle("entries");
+---
+
+<BaseLayout>
+  <Hero title="Entries" iconName={iconName}>
+    <HeroDescription>
+      The journey continues! These entries document my latest explorations -
+      quick observations, intriguing findings, and practical insights gleaned
+      from the field. Each one represents a small step forward in understanding
+      complex territories. Browse through recent discoveries and see what new
+      knowledge awaits.
+    </HeroDescription>
+  </Hero>
+
+  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+    {
+      entries.map((entry) => {
+        return <EntryItem entry={entry} />;
+      })
+    }
+  </div>
+</BaseLayout>
+<!-- 
+display: grid;
+    width: 100%;
+    place-items: center;
+    background-size: cover;
+    background-position: center; -->

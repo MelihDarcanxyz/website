@@ -1,0 +1,12 @@
+---
+const d = new Date()
+import { siteConfig } from "@site.config";
+
+import Logo from "@assets/logo.svg"
+---
+
+<footer class="px-2 md:px-4 py-2 text-xs sm:text-sm footer footer-center bg-base-300">
+    <aside>
+      <p>Copyright © {d.getFullYear()} - All rights reserved by {siteConfig.author}.</p>
+    </aside>
+  </footer>

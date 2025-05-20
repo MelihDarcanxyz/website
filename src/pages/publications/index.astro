@@ -1,0 +1,33 @@
+---
+import Hero from "@components/Hero.astro";
+import HeroDescription from "@components/HeroDescription.astro";
+import Publication from "@components/collections/Publication.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getIconByTitle, sortPublicationsByNewest } from "@scripts/utils";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+const publications: CollectionEntry<"publications">[] = sortPublicationsByNewest(await getCollection("publications"));
+const iconName = getIconByTitle("publications")
+---
+
+<BaseLayout>
+  <Hero title="Publications" iconName={iconName}>
+    <HeroDescription>
+      These publications represent more in-depth analyses, comprehensive
+      reports, and formalized documentation of key findings from our
+      expeditions. They offer a deeper dive into specific topics and provide a
+      structured understanding of complex concepts - the result of sustained
+      effort, careful observation, and collaborative exploration with fellow
+      adventurers. These are the documented outcomes of shared journeys and
+      collective insights.
+    </HeroDescription>
+  </Hero>
+  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+    {
+      publications.map((publication) => {
+        return <Publication publication={publication}/>
+      })
+    }
+  </div>
+</BaseLayout>
