@@ -19,6 +19,7 @@
     "astro": "^5.7.12",
     "astro-icon": "^1.1.5",
     "daisyui": "^5.0.35",
+    "dayjs": "^1.11.13",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",

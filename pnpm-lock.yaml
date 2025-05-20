@@ -38,6 +38,9 @@ importers:
       daisyui:
         specifier: ^5.0.35
         version: 5.0.35
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       mdast-util-to-string:
         specifier: ^4.0.0
         version: 4.0.0
@@ -918,6 +921,9 @@ packages:
 
   daisyui@5.0.35:
     resolution: {integrity: sha512-AWi11n/x5++mps55jcwrBf0Lmip1euWY0FYcH/05SFGmoqrU7S7/aIUWaiaeqlJ5EcmEZ/7zEY73aOxMv6hcIg==}
+
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -3132,6 +3138,8 @@ snapshots:
       css-tree: 2.2.1
 
   daisyui@5.0.35: {}
+
+  dayjs@1.11.13: {}
 
   debug@4.4.1:
     dependencies:
