@@ -66,7 +66,7 @@ export function getDayMonthYear(date: Date): string {
     return `${day} ${monthName} ${year}`
 }
 
-export function getDayjsMonthYear(date): string {
+export function getDayjsMonthYear(date: dayjs.Dayjs): string {
     return dayjs(date).utc().format("DD MMMM YYYY");
 }
 
