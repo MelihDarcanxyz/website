@@ -1,6 +1,9 @@
 import type { Author } from "@content.config";
 import { menuLinks, siteConfig } from "@site.config";
 import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 
 /**
  * Sorting utils
@@ -61,6 +64,10 @@ export function getDayMonthYear(date: Date): string {
     const year = date.getFullYear();
 
     return `${day} ${monthName} ${year}`
+}
+
+export function getDayjsMonthYear(date): string {
+    return dayjs(date).format("DD MMMM YYYY");
 }
 
 /**

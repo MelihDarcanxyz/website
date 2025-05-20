@@ -3,7 +3,7 @@
  * ExpeditionItem is a component that displays a single expedition item in the Expeditions landing page.
  */
 
-import { getDayMonthYear } from "@scripts/utils";
+import { getDayjsMonthYear } from "@scripts/utils";
 import { render, type CollectionEntry } from "astro:content";
 
 interface Props {
@@ -14,7 +14,7 @@ const { expedition } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(expedition);
 
-const lastModifiedString = getDayMonthYear(remarkPluginFrontmatter.lastModified)
+const lastModifiedString = getDayjsMonthYear(remarkPluginFrontmatter.lastModified)
 ---
 
 <div class="flex flex-col gap-4 p-8">
