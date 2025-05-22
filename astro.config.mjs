@@ -11,39 +11,41 @@ import remarkMdx from "remark-mdx";
 import { remarkModifiedTime } from "./src/plugins/remark-modified-time.mjs";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
+import og from "astro-og";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "https://melihdarcan.dev",
-	output: "static",
-	compressHTML: true,
+    site: "https://melihdarcan.dev",
+    output: "static",
+    compressHTML: true,
 
-	vite: {
-		plugins: [tailwindcss()],
-	},
+    vite: {
+        plugins: [tailwindcss()],
+    },
 
-	integrations: [icon(), mdx()],
+    integrations: [icon(), mdx(), og()],
 
-	markdown: {
-		remarkPlugins: [remarkMdx, remarkReadingTime, remarkModifiedTime],
+    markdown: {
+        remarkPlugins: [remarkMdx, remarkReadingTime, remarkModifiedTime],
 
-		rehypePlugins: [
-			rehypeHeadingIds,
-			[
-				rehypeAutolinkHeadings,
-				{
-					behavior: "wrap",
-				},
-			],
-		],
-	},
+        rehypePlugins: [
+            rehypeHeadingIds,
+            [
+                rehypeAutolinkHeadings,
+                {
+                    behavior: "wrap",
+                },
+            ],
+        ],
+    },
 
-	experimental: {
-		fonts: [
-			{
-				provider: fontProviders.fontsource(),
-				name: "JetBrains Mono",
-				cssVariable: "--main-font",
-			},
-		],
-	},
+    experimental: {
+        fonts: [
+            {
+                provider: fontProviders.fontsource(),
+                name: "JetBrains Mono",
+                cssVariable: "--main-font",
+            },
+        ],
+    },
 });
