@@ -20,7 +20,7 @@ const dateString = getDayMonthYear(entry.data.date);
 const lastModifiedString = getDayjsMonthYear(remarkPluginFrontmatter.lastModified);
 ---
 
-<BaseLayout>
+<BaseLayout title={entry.data.title} description={entry.data.description}>
   <div
     class="max-w-full prose max-sm:prose-sm lg:prose-lg bg-base-200 md:p-6 lg:p-8 prose-headings prose-headings:before:text-gray-600 prose-headings:hover:before:text-accent prose-headings:before:content-['#'] prose-headings:before:mr-2 sm:prose-headings:before:mr-4 sm:prose-th:before:content-none"
   >
