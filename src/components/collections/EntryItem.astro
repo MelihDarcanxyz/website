@@ -3,8 +3,8 @@
  * EntryItem is a component that displays a single entry item in the Entries landing page.
  */
 
+import { type CollectionEntry, render } from "astro:content";
 import { getDayMonthYear } from "@scripts/utils";
-import { render, type CollectionEntry } from "astro:content";
 
 interface Props {
   entry: CollectionEntry<"entries">;

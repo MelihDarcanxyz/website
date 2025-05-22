@@ -12,7 +12,7 @@ export interface SiteConfig {
 }
 
 export interface MenuLink {
-    path: string,
-    title: string,
-    icon?: string,
+	path: string;
+	title: string;
+	icon?: string;
 }

@@ -1,49 +1,49 @@
 // @ts-check
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
-import icon from 'astro-icon';
-import mdx from '@astrojs/mdx';
+import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
 
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import remarkMdx from 'remark-mdx';
-import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
-import { remarkModifiedTime } from './src/plugins/remark-modified-time.mjs';
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkMdx from "remark-mdx";
+import { remarkModifiedTime } from "./src/plugins/remark-modified-time.mjs";
+import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://melihdarcan.dev",
-  output: 'static',
-  compressHTML: true,
+	site: "https://melihdarcan.dev",
+	output: "static",
+	compressHTML: true,
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-  integrations: [icon(), mdx()],
+	integrations: [icon(), mdx()],
 
-  markdown: {
+	markdown: {
+		remarkPlugins: [remarkMdx, remarkReadingTime, remarkModifiedTime],
 
-    remarkPlugins: [
-      remarkMdx,
-      remarkReadingTime,
-      remarkModifiedTime,
-    ],
+		rehypePlugins: [
+			rehypeHeadingIds,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "wrap",
+				},
+			],
+		],
+	},
 
-    rehypePlugins: [
-      rehypeHeadingIds,
-      [rehypeAutolinkHeadings, {
-        behavior: 'wrap',
-      }],
-    ],
-  },
-
-  experimental: {
-    fonts: [{
-      provider: fontProviders.fontsource(),
-      name: "JetBrains Mono",
-      cssVariable: "--main-font",
-    }]
-  }
+	experimental: {
+		fonts: [
+			{
+				provider: fontProviders.fontsource(),
+				name: "JetBrains Mono",
+				cssVariable: "--main-font",
+			},
+		],
+	},
 });

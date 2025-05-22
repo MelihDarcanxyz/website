@@ -1,10 +1,10 @@
 ---
-import ExpeditionItem from "@components/collections/ExpeditionItem.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Hero from "@components/Hero.astro";
 import HeroDescription from "@components/HeroDescription.astro";
+import ExpeditionItem from "@components/collections/ExpeditionItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle } from "@scripts/utils";
-import { getCollection, type CollectionEntry } from "astro:content";
 
 const expeditions: CollectionEntry<"expeditions">[] =
   await getCollection("expeditions");

@@ -13,7 +13,8 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "Expedition - charting the frontiers of knowledge through a personal archive of discoveries and the ongoing pursuit of understanding.",
+	description:
+		"Expedition - charting the frontiers of knowledge through a personal archive of discoveries and the ongoing pursuit of understanding.",
 
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "en-US",
@@ -35,17 +36,17 @@ export const menuLinks: MenuLink[] = [
 	{
 		path: "/entries/",
 		title: "Entries",
-		icon: "mingcute:paper-2-line"
+		icon: "mingcute:paper-2-line",
 	},
 	{
 		path: "/expeditions/",
 		title: "Expeditions",
-		icon: "mingcute:campground-line"
+		icon: "mingcute:campground-line",
 	},
-    {
+	{
 		path: "/publications/",
 		title: "Publications",
-		icon: "mingcute:book-6-line"
+		icon: "mingcute:book-6-line",
 	},
 ];
 
@@ -53,21 +54,21 @@ export const socialLinks: MenuLink[] = [
 	{
 		path: "https://github.com/MelihDarcanxyz",
 		title: "GitHub",
-		icon: "mdi:github"
+		icon: "mdi:github",
 	},
 	{
 		path: "https://www.linkedin.com/in/melih-darcan/",
 		title: "LinkedIn",
-		icon: "mdi:linkedin"
+		icon: "mdi:linkedin",
 	},
 	{
 		path: "https://orcid.org/0009-0002-7620-6286",
 		title: "ORCİD",
-		icon: "academicons:orcid"
+		icon: "academicons:orcid",
 	},
 	{
 		path: "mailto:melih.darcan@tutamail.com",
 		title: "E-mail",
-		icon: "mdi:email"
+		icon: "mdi:email",
 	},
-]
+];

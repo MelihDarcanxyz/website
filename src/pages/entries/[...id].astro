@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import { getDayjsMonthYear, getDayMonthYear } from "@scripts/utils";
 import { getCollection, render } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getDayMonthYear, getDayjsMonthYear } from "@scripts/utils";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = (await getCollection("entries")).filter((entry) => import.meta.env.DEV || (entry.data.date <= new Date() && !entry.data.draft));

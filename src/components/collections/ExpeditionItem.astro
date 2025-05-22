@@ -3,8 +3,8 @@
  * ExpeditionItem is a component that displays a single expedition item in the Expeditions landing page.
  */
 
+import { type CollectionEntry, render } from "astro:content";
 import { getDayjsMonthYear } from "@scripts/utils";
-import { render, type CollectionEntry } from "astro:content";
 
 interface Props {
   expedition: CollectionEntry<"expeditions">;

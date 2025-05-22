@@ -3,9 +3,9 @@ interface Props {
   publication: CollectionEntry<"publications">;
 }
 
+import type { CollectionEntry } from "astro:content";
 import { constructAuthorString, getMonthYear } from "@scripts/utils";
 import { siteConfig } from "@site.config";
-import type { CollectionEntry } from "astro:content";
 const { publication } = Astro.props;
 
 const authorString = constructAuthorString(publication.data.authors)

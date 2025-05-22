@@ -1,11 +1,11 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Hero from "@components/Hero.astro";
 import HeroDescription from "@components/HeroDescription.astro";
 import Publication from "@components/collections/Publication.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortPublicationsByNewest } from "@scripts/utils";
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
 
 const publications: CollectionEntry<"publications">[] = sortPublicationsByNewest(await getCollection("publications"));
 const iconName = getIconByTitle("publications")

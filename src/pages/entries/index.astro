@@ -1,10 +1,10 @@
 ---
-import EntryItem from "@components/collections/EntryItem.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Hero from "@components/Hero.astro";
 import HeroDescription from "@components/HeroDescription.astro";
+import EntryItem from "@components/collections/EntryItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortEntriesByNewest } from "@scripts/utils";
-import { type CollectionEntry, getCollection } from "astro:content";
 
 const entries: CollectionEntry<"entries">[] = sortEntriesByNewest(await getCollection("entries")).filter((entry) => import.meta.env.DEV || (entry.data.date <= new Date() && !entry.data.draft));
 const iconName = getIconByTitle("entries");

@@ -1,34 +1,33 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: garden --default, dark --prefersdark;
+	themes: garden --default, dark --prefersdark;
 }
-  
+
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-
 @theme {
-  --breakpoint-5xs: 2rem;
-  --breakpoint-4xs: 8rem;
-  --breakpoint-3xs: 16rem;
-  --breakpoint-2xs: 24rem;
-  --breakpoint-xs: 32rem;
+	--breakpoint-5xs: 2rem;
+	--breakpoint-4xs: 8rem;
+	--breakpoint-3xs: 16rem;
+	--breakpoint-2xs: 24rem;
+	--breakpoint-xs: 32rem;
 }
 
 @theme inline {
-  --font-sans: var(--main-font);
+	--font-sans: var(--main-font);
 }
 
 html {
-  @apply scroll-smooth;
+	@apply scroll-smooth;
 }
 
 body {
-  @apply flex flex-col min-h-screen font-mono antialiased font-normal;
+	@apply flex flex-col min-h-screen font-mono antialiased font-normal;
 }
 
 a {
-  @apply link;
+	@apply link;
 }

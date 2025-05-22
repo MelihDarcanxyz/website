@@ -1,8 +1,8 @@
 ---
+import { getCollection, getEntries, render } from "astro:content";
 import EntryItem from "@components/collections/EntryItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getDayMonthYear } from "@scripts/utils";
-import { getCollection, render, getEntries } from "astro:content";
 
 export async function getStaticPaths() {
   const expeditions = await getCollection("expeditions");
