@@ -7,14 +7,14 @@ import { type CollectionEntry, render } from "astro:content";
 import { getDayjsMonthYear } from "@scripts/utils";
 
 interface Props {
-  expedition: CollectionEntry<"expeditions">;
+	expedition: CollectionEntry<"expeditions">;
 }
 
 const { expedition } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(expedition);
 
-const lastModifiedString = getDayjsMonthYear(remarkPluginFrontmatter.lastModified)
+const lastModifiedString = getDayjsMonthYear(remarkPluginFrontmatter.lastModified);
 ---
 
 <div class="flex flex-col gap-4 p-8">

@@ -5,11 +5,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getDayMonthYear } from "@scripts/utils";
 
 export async function getStaticPaths() {
-  const expeditions = await getCollection("expeditions");
-  return expeditions.map((expedition) => ({
-    params: { id: expedition.id },
-    props: { expedition },
-  }));
+	const expeditions = await getCollection("expeditions");
+	return expeditions.map((expedition) => ({
+		params: { id: expedition.id },
+		props: { expedition },
+	}));
 }
 
 const { expedition } = Astro.props;

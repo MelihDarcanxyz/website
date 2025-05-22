@@ -5,13 +5,9 @@ interface Props {
 	keywords?: string[];
 }
 
-import { siteConfig } from "@site.config"
+import { siteConfig } from "@site.config";
 
-const {
-	title,
-	description = siteConfig.description,
-	keywords = [],
-} = Astro.props;
+const { title, description = siteConfig.description, keywords = [] } = Astro.props;
 ---
 
 <head>

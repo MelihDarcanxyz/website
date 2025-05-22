@@ -7,8 +7,10 @@ import Publication from "@components/collections/Publication.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortPublicationsByNewest } from "@scripts/utils";
 
-const publications: CollectionEntry<"publications">[] = sortPublicationsByNewest(await getCollection("publications"));
-const iconName = getIconByTitle("publications")
+const publications: CollectionEntry<"publications">[] = sortPublicationsByNewest(
+	await getCollection("publications"),
+);
+const iconName = getIconByTitle("publications");
 ---
 
 <BaseLayout>

@@ -6,8 +6,7 @@ import ExpeditionItem from "@components/collections/ExpeditionItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle } from "@scripts/utils";
 
-const expeditions: CollectionEntry<"expeditions">[] =
-  await getCollection("expeditions");
+const expeditions: CollectionEntry<"expeditions">[] = await getCollection("expeditions");
 const iconName = getIconByTitle("expeditions");
 ---
 

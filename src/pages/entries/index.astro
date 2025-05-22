@@ -6,7 +6,9 @@ import EntryItem from "@components/collections/EntryItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortEntriesByNewest } from "@scripts/utils";
 
-const entries: CollectionEntry<"entries">[] = sortEntriesByNewest(await getCollection("entries")).filter((entry) => import.meta.env.DEV || (entry.data.date <= new Date() && !entry.data.draft));
+const entries: CollectionEntry<"entries">[] = sortEntriesByNewest(
+	await getCollection("entries"),
+).filter((entry) => import.meta.env.DEV || (entry.data.date <= new Date() && !entry.data.draft));
 const iconName = getIconByTitle("entries");
 ---
 
