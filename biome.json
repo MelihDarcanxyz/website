@@ -4,8 +4,7 @@
 		"indentStyle": "tab",
 		"indentWidth": 2,
 		"lineWidth": 100,
-		"formatWithErrors": true,
-		"ignore": ["*.astro"]
+		"formatWithErrors": true
 	},
 	"organizeImports": {
 		"enabled": true
@@ -32,5 +31,18 @@
 		"clientKind": "git",
 		"enabled": true,
 		"useIgnoreFile": true
-	}
+	},
+	"overrides": [
+		{
+			"include": ["*.svelte", "*.astro", "*.vue"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					}
+				}
+			}
+		}
+	]
 }
