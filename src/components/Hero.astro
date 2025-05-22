@@ -6,15 +6,21 @@ interface Props {
 	title: string;
 	Logo?: ImageMetadata;
 	iconName?: string;
+  fillColor?: string;
 }
 
-const { title, Logo, iconName } = Astro.props;
+const { title, Logo, iconName, fillColor } = Astro.props;
+
+const iconFill = typeof fillColor === "string" ? `text-${fillColor}` : "text-accent"
+const logoFill = typeof fillColor === "string" ? `fill-${fillColor}` : "fill-accent"
+
+console.log(iconFill)
 ---
 
 <div class="flex-grow hero bg-base-200">
   <div class="text-center hero-content">
     <div>
-      {typeof iconName === "string" ? <Icon name={iconName} class="inline-block p-5 md:p-10 text-accent w-30 sm:w-75 h-30 sm:h-75" /> : <Logo class="inline-block p-5 stroke-1 stroke-base-300 md:p-10 fill-accent w-30 sm:w-75 h-30 sm:h-75" />}
+      {typeof iconName === "string" ? <Icon name={iconName} class:list={["inline-block p-5 md:p-10 w-30 sm:w-75 h-30 sm:h-75", iconFill]},  /> : <Logo class:list={["inline-block p-5 stroke-1 stroke-base-300 md:p-10 w-30 sm:w-75 h-30 sm:h-75", logoFill]} />}
       
       <h1 class="text-2xl font-bold md:text-3xl lg:text-4xl">{title}</h1>
       <slot />

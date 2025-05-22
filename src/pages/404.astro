@@ -1,0 +1,22 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { siteConfig, socialLinks } from "@site.config";
+
+import Logo from "@assets/raven-0.svg";
+import HeroDescription from "@components/HeroDescription.astro";
+import SocialLinks from "@components/SocialLinks.astro";
+---
+
+<BaseLayout>
+  <Hero title="Caw... Caw..." Logo={Logo} fillColor="secondary">
+    <HeroDescription>
+      Lost, are we? Another explorer strayed from the path. It seems you've
+      wandered into a place where the maps don't quite
+      align. Don't fret, though! Even seasoned adventurers sometimes find
+      themselves disoriented.
+    </HeroDescription>
+    <SocialLinks />
+  </Hero>
+</BaseLayout>
