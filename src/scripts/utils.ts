@@ -70,7 +70,7 @@ export function getMonthYear(date: Date): string {
 }
 
 export function getDayMonthYear(date: Date): string {
-	const day = date.getDay();
+	const day = date.getDate();
 
 	const month = date.getMonth();
 	const monthName = monthNames[month];
