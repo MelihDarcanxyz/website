@@ -12,7 +12,7 @@ interface Props {
 const { title, Logo, logoFill="fill-accent", iconName, iconFill="text-accent" } = Astro.props;
 ---
 
-<div class="flex-grow hero bg-base-200">
+<div class="flex-grow hero">
   <div class="text-center hero-content">
     <div>
       {typeof iconName === "string" ? <Icon name={iconName} class:list={["inline-block p-5 md:p-10 w-30 sm:w-75 h-30 sm:h-75", iconFill]},  /> : <Logo class:list={["inline-block p-5 stroke-1 stroke-base-300 md:p-10 w-30 sm:w-75 h-30 sm:h-75", logoFill]} />}
