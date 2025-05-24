@@ -5,8 +5,10 @@ import HeroDescription from "@components/HeroDescription.astro";
 import ExpeditionItem from "@components/collections/ExpeditionItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle } from "@scripts/utils";
+import IndexListContainer from "@components/IndexListContainer.astro";
 
-const expeditions: CollectionEntry<"expeditions">[] = await getCollection("expeditions");
+const expeditions: CollectionEntry<"expeditions">[] =
+  await getCollection("expeditions");
 const iconName = getIconByTitle("expeditions");
 ---
 
@@ -21,11 +23,11 @@ const iconName = getIconByTitle("expeditions");
     </HeroDescription>
   </Hero>
 
-  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+  <IndexListContainer>
     {
       expeditions.map((expedition) => {
         return <ExpeditionItem expedition={expedition} />;
       })
     }
-  </div>
+  </IndexListContainer>
 </BaseLayout>

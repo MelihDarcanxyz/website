@@ -5,6 +5,7 @@ import HeroDescription from "@components/HeroDescription.astro";
 import EntryItem from "@components/collections/EntryItem.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortEntriesByNewest } from "@scripts/utils";
+import IndexListContainer from "@components/IndexListContainer.astro";
 
 const entries: CollectionEntry<"entries">[] = sortEntriesByNewest(
 	await getCollection("entries"),
@@ -23,11 +24,11 @@ const iconName = getIconByTitle("entries");
     </HeroDescription>
   </Hero>
 
-  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+  <IndexListContainer>
     {
       entries.map((entry) => {
         return <EntryItem entry={entry} />;
       })
     }
-  </div>
+  </IndexListContainer>
 </BaseLayout>

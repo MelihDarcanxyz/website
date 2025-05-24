@@ -6,10 +6,10 @@ import HeroDescription from "@components/HeroDescription.astro";
 import Publication from "@components/collections/Publication.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getIconByTitle, sortPublicationsByNewest } from "@scripts/utils";
+import IndexListContainer from "@components/IndexListContainer.astro";
 
-const publications: CollectionEntry<"publications">[] = sortPublicationsByNewest(
-	await getCollection("publications"),
-);
+const publications: CollectionEntry<"publications">[] =
+  sortPublicationsByNewest(await getCollection("publications"));
 const iconName = getIconByTitle("publications");
 ---
 
@@ -25,11 +25,11 @@ const iconName = getIconByTitle("publications");
       collective insights.
     </HeroDescription>
   </Hero>
-  <div class="grid flex-grow place-items-center p-8 mx-auto max-w-4xl bg-base-100 divide divide-y-1">
+  <IndexListContainer>
     {
       publications.map((publication) => {
-        return <Publication publication={publication}/>
+        return <Publication publication={publication} />;
       })
     }
-  </div>
+  </IndexListContainer>
 </BaseLayout>
