@@ -71,4 +71,9 @@ export const socialLinks: MenuLink[] = [
 		title: "E-mail",
 		icon: "mdi:email",
 	},
+	{
+		path: "https://melihdarcan.dev/cv.pdf",
+		title: "CV",
+		icon: "mdi:file"
+	}
 ];
