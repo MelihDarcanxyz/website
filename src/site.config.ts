@@ -62,6 +62,11 @@ export const socialLinks: MenuLink[] = [
 		icon: "mdi:linkedin",
 	},
 	{
+		path: "https://scholar.google.com/citations?hl=en&user=nJqH9sgAAAAJ&view_op=list_works&sortby=pubdate",
+		title: "Scholar",
+		icon: "academicons:google-scholar-square",
+	},
+	{
 		path: "https://orcid.org/0009-0002-7620-6286",
 		title: "ORCİD",
 		icon: "academicons:orcid",
