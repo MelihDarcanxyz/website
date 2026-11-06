@@ -110,8 +110,7 @@ def get_scholar_citations() -> None:
 
     # Compare new data with existing data
     if existing_data and existing_data.get("papers") == citation_data["papers"]:
-        print("No changes in citation data. Skipping file update.")
-        return
+        print("Citation counts are unchanged. Refreshing the last_updated date only.")
 
     try:
         with open(OUTPUT_FILE, "w") as f:
