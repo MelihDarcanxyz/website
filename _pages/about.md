@@ -2,14 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: MSc student at ImageLab, supervised by <a href='https://user.ceng.metu.edu.tr/~emre/'>Emre Akbas</a>
+subtitle: MSc student at <a href='https://image.ceng.metu.edu.tr/'>ImageLab</a>, supervised by <a href='https://user.ceng.metu.edu.tr/~emre/'>Emre Akbas</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>ImageLab</p>
+    <p><a href="https://image.ceng.metu.edu.tr/">ImageLab</a></p>
     <p>Department of Computer Engineering</p>
     <p>Middle East Technical University</p>
     <p>Ankara, Turkey</p>
@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an MSc student in Artificial Intelligence Engineering at the Middle East Technical University (METU) in Ankara, working in ImageLab under the supervision of [Emre Akbas](https://user.ceng.metu.edu.tr/~emre/). My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible.
+I am an MSc student in Artificial Intelligence Engineering at the Middle East Technical University (METU) in Ankara, working in [ImageLab](https://image.ceng.metu.edu.tr/) under the supervision of [Emre Akbas](https://user.ceng.metu.edu.tr/~emre/). My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible.
 
 {% assign dance_years = site.time | date: '%Y' | minus: 2011 %}Folk dances have been part of my life for more than {{ dance_years }} years. During my BSc in Artificial Intelligence Engineering at Hacettepe University, I joined the university's Folk Dances Society for two years and danced the traditions of many regions across Turkey. The zeybek tradition of the Aegean holds a special place for me, because it is part of my heritage.
 
