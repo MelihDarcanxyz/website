@@ -2,33 +2,34 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: MSc student at ImageLab, supervised by <a href='https://user.ceng.metu.edu.tr/~emre/'>Emre Akbas</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>ImageLab</p>
+    <p>Department of Computer Engineering</p>
+    <p>Middle East Technical University</p>
+    <p>Ankara, Turkey</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am an MSc student in Artificial Intelligence Engineering at the Middle East Technical University (METU) in Ankara, working in ImageLab under the supervision of [Emre Akbas](https://user.ceng.metu.edu.tr/~emre/). My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Folk dances have been part of my life since I was about eight, and sixteen years later I still dance. During my BSc in Artificial Intelligence Engineering at Hacettepe University, I joined the university's Folk Dances Society for two years and danced the traditions of many regions across Turkey. The zeybek tradition of the Aegean holds a special place for me, because it is part of my heritage.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Today the two worlds meet in my work. I look at folk dances through 3D vision and bring a dancer's eye to questions of pose and motion. Recently, I also co-authored [HaNDF](https://circle-group.github.io/research/HaNDF/), an object-conditioned neural hand distance field accepted at NeurIPS 2026.
