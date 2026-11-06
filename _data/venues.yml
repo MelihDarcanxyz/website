@@ -7,3 +7,75 @@
 
 "Vision":
   color: "#009f36"
+
+# Conferences
+"ICML":
+  url: https://icml.cc/
+
+"ICLR":
+  url: https://iclr.cc/
+
+"NeurIPS":
+  url: https://neurips.cc/
+
+"AAAI":
+  url: https://aaai.org/
+
+"AISTATS":
+  url: https://aistats.org/
+
+"IJCAI":
+  url: https://www.ijcai.org/
+
+"KDD":
+  url: https://kdd.org/
+
+"CVPR":
+  url: https://cvpr.thecvf.com/
+
+"ICCV":
+  url: https://iccv.thecvf.com/
+
+"WACV":
+  url: https://wacv.thecvf.com/
+
+"ECCV":
+  url: https://eccv.ecva.net/
+
+"3DV":
+  url: https://3dvconf.github.io/
+
+"SIGGRAPH":
+  url: https://www.siggraph.org/
+
+"ISMB":
+  url: https://www.iscb.org/ismb
+
+# Journals
+"TPAMI":
+  url: https://www.computer.org/csdl/journal/tp
+
+"IJCV":
+  url: https://link.springer.com/journal/11263
+
+"JMLR":
+  url: https://jmlr.org/
+
+"TMLR":
+  url: https://jmlr.org/tmlr/
+
+"NAR":
+  url: https://academic.oup.com/nar
+
+"Bioinformatics":
+  url: https://academic.oup.com/bioinformatics
+
+"COSB":
+  url: https://www.sciencedirect.com/journal/current-opinion-in-structural-biology
+
+# Preprints
+"arXiv":
+  url: https://arxiv.org/
+
+"bioRxiv":
+  url: https://www.biorxiv.org/
