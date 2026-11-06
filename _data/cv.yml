@@ -1,189 +1,119 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
+  name: Melih Darcan
+  headline: Computer Vision Researcher · Human Pose and Motion
+  location: Ankara, Turkey
+  email: melih.darcan@metu.edu.tr
+  website: https://melihdarcan.dev
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: MelihDarcanxyz
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
-
+      username: melih-darcan
+    - network: Google Scholar
+      username: nJqH9sgAAAAJ
   sections:
+    Summary:
+      - bullet: "MSc student in Artificial Intelligence Engineering at METU ImageLab, supervised by Emre Akbas. My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible."
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Hacettepe University
+        area: Artificial Intelligence Engineering
+        degree: BSc
+        start_date: 2020-09
+        end_date: 2025-02
+        location: Ankara, Turkey
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
-
+          - "GPA: 3.17 / 4.00"
+          - Machine Learning, Deep Learning, Image Processing, Computer Vision, Bioinformatics
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Inzva
+        position: Guide & Participant
+        start_date: 2023-08
+        end_date: present
+        location: Istanbul, Turkey & Online
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+          - "Observer in AI Projects #10, lightly guiding a team through the program"
+          - Volunteer in Vision Cohort 2026, helping with logistics
+          - "Proposed and led a pose estimation and dataset creation project for folk dances in AI Projects #9"
+          - Guide for the Applied AI and Deep Learning study groups, lecturing on Video Understanding, Virtual Humans and CNNs
+          - "Improved the DeTraffic project in AI Projects #8 with Q-Networks using Kolmogorov-Arnold Networks (KANs) for traffic control"
+          - Completed the Google Developers ML Bootcamp (TensorFlow) and competed in Kaggle challenges
+      - company: Hacettepe University, Biological Data Science Laboratory
+        position: Researcher
+        start_date: 2022-07
+        end_date: 2025-10
+        location: Ankara, Turkey
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+          - Developed, maintained and refactored pypath (Python, GraphQL, REST API), adding dataset modules that cut data preprocessing time for bioinformatics researchers
+          - Developed a GraphQL API for the CROssBAR knowledge graph database
+          - Worked on the LLM integration of CROssBAR
+          - Built the server infrastructure of CROssBAR
+      - company: Samsung Innovation Campus
+        position: Guide & Participant
+        start_date: 2023-08
+        end_date: 2025-01
+        location: Ankara, Turkey & Online
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
+          - Technical Guide for two consecutive terms (Jun. 2024, Jan. 2025), lecturing on model deployment strategies
+          - Co-developed DeTraffic, an AI-driven traffic management system aligned with UN Sustainable Development Goals 3, 11, 12 and 13
+          - Completed training on the AI development lifecycle, sustainable development and large-scale AI project methodology
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+          - Zuhao Liu
+          - "**Melih Darcan**"
+          - Zhengdi Yu
+          - Riza Alp Guler
+          - Tolga Birdal
+        journal: NeurIPS 2026
+        date: 2026
+        url: https://circle-group.github.io/research/HaNDF/
+      - title: "CROssBARv2: A unified computational framework for heterogeneous biomedical data representation and LLM-driven exploration"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+          - Bünyamin Şen
+          - Erva Ulusoy
+          - "**Melih Darcan**"
+          - Mert Ergün
+          - Sebastian Lobentanzer
+          - Ahmet S Rifaioglu
+          - Dénes Türei
+          - Julio Saez-Rodriguez
+          - Tunca Doğan
+        journal: bioRxiv preprint (oral presentation at ECCB 2025)
+        date: 2026-04
+        doi: 10.64898/2026.04.12.718028
+      - title: "OmniPath: integrated knowledgebase for multi-omics analysis"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+          - Dénes Türei
+          - Jonathan Schaul
+          - Nicolàs Palacio-Escat
+          - Balázs Bohár
+          - Yunfan Bai
+          - Francesco Ceccarelli
+          - Elif Çevrim
+          - Macabe Daley
+          - "**Melih Darcan**"
+          - Daniel Dimitrov
+          - et al.
+        journal: Nucleic Acids Research
+        date: 2026
+      - title: "Protein language models for predicting drug-target interactions: Novel approaches, emerging methods, and future directions"
+        authors:
+          - Atabey Ünlü
+          - Erva Ulusoy
+          - Melih Gökay Yiğit
+          - "**Melih Darcan**"
+          - Tunca Doğan
+        journal: Current Opinion in Structural Biology
+        date: 2025
+    Technical Skills:
+      - label: Interests
+        details: Virtual Humans, Computer Vision, Deep Learning, Machine Learning, Reinforcement Learning
+      - label: AI
+        details: PyTorch, PyTorch3D, PyTorch Geometric, TensorFlow
+      - label: Programming
+        details: Python, C, Java
+      - label: Other
+        details: Linux system administration, Bash, Astro
+      - label: Languages
+        details: Turkish (native), English (C1; IELTS 8/9, TOEFL 110/120)
