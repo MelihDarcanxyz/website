@@ -44,4 +44,6 @@ jobs:
         with:
           fail: true
           # only check local links
-          args: --offline --remap '_site(/?.*)/assets/(.*) _site/assets/$2' --verbose --no-progress '_site/**/*.html'
+          # External posts (al_ext_posts) get a generated page holding a copy of the other site's text, and
+          # that copy contains garbled tokens like "mentorship.contact@inzva.com" that count as broken local links.
+          args: --offline --remap '_site(/?.*)/assets/(.*) _site/assets/$2' --exclude 'inzva\.com' --verbose --no-progress '_site/**/*.html'
