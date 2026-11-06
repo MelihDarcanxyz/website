@@ -173,12 +173,22 @@ disqus_shortname: al-folio # put your disqus shortname
 external_sources:
   - name: inzva
     categories: [external-posts]
-    tags: [inzva, ai-projects]
+    tags: [inzva]
     posts:
+      # AI Projects: dates are the showcase days stated in the reports
       - url: https://inzva.com/reports/2024/ai-projects-8
         published_date: 2024-05-18
       - url: https://inzva.com/reports/2025/ai-projects-9
         published_date: 2025-09-27
+      # The reports below state no end date. These are estimates, confirm them.
+      - url: https://inzva.com/deep-learning-study-group-2024-report # started September 7, 2024, runs about three months
+        published_date: 2024-12-07
+      - url: https://inzva.com/reports/2025/applied-ai9-report # no date on the page, inzva sitemap says last modified 2025-06-04
+        published_date: 2025-06-04
+      - url: https://inzva.com/reports/2026/deep-learning-study-group-10-report # started January 24, 2026, runs three months
+        published_date: 2026-04-24
+      - url: https://inzva.com/reports/2026/vision-cohort-2026-report # no date on the page, inzva sitemap says last modified 2026-06-03
+        published_date: 2026-06-03
 
 # -----------------------------------------------------------------------------
 # Newsletter
