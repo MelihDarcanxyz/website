@@ -32,4 +32,4 @@ I am an MSc student in Artificial Intelligence Engineering at the Middle East Te
 
 Folk dances have been part of my life since I was about eight, and sixteen years later I still dance. During my BSc in Artificial Intelligence Engineering at Hacettepe University, I joined the university's Folk Dances Society for two years and danced the traditions of many regions across Turkey. The zeybek tradition of the Aegean holds a special place for me, because it is part of my heritage.
 
-Today the two worlds meet in my work. I look at folk dances through 3D vision and bring a dancer's eye to questions of pose and motion. Recently, I also co-authored [HaNDF](https://circle-group.github.io/research/HaNDF/), an object-conditioned neural hand distance field accepted at NeurIPS 2026.
+Today the two worlds meet in my work. I look at folk dances through 3D vision and bring a dancer's eye to questions of pose and motion.
