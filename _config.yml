@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Melih
 last_name: Darcan
 contact_note: >
-  Email is the best way to reach me. I am always happy to talk about research, datasets or folk dances.
+  Email is the best way to reach me. I am always happy to talk about 3D computer vision, pose research, or traditional folk dances.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Melih Darcan, MSc student at METU ImageLab. Research on human pose and motion in 3D, with a focus on traditional folk dances.
 footer_text: >
