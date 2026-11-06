@@ -16,6 +16,14 @@ cv:
     Summary:
       - bullet: "MSc student in Artificial Intelligence Engineering at METU ImageLab, supervised by Emre Akbas. My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible."
     Education:
+      - institution: Middle East Technical University
+        area: Artificial Intelligence Engineering
+        degree: MSc
+        start_date: 2026-09
+        end_date: present
+        location: Ankara, Turkey
+        highlights:
+          - ImageLab, Department of Computer Engineering. Supervised by Emre Akbas
       - institution: Hacettepe University
         area: Artificial Intelligence Engineering
         degree: BSc
