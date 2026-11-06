@@ -30,6 +30,6 @@ latest_posts:
 
 I am an MSc student in Artificial Intelligence Engineering at the Middle East Technical University (METU) in Ankara, working in ImageLab under the supervision of [Emre Akbas](https://user.ceng.metu.edu.tr/~emre/). My research is on human pose and motion, and on making computer vision work for traditional folk dances: robust pose estimation, motion data, and the datasets that make both possible.
 
-Folk dances have been part of my life since I was about eight, and sixteen years later I still dance. During my BSc in Artificial Intelligence Engineering at Hacettepe University, I joined the university's Folk Dances Society for two years and danced the traditions of many regions across Turkey. The zeybek tradition of the Aegean holds a special place for me, because it is part of my heritage.
+{% assign dance_years = site.time | date: '%Y' | minus: 2011 %}Folk dances have been part of my life for more than {{ dance_years }} years. During my BSc in Artificial Intelligence Engineering at Hacettepe University, I joined the university's Folk Dances Society for two years and danced the traditions of many regions across Turkey. The zeybek tradition of the Aegean holds a special place for me, because it is part of my heritage.
 
 Today the two worlds meet in my work. I look at folk dances through 3D vision and bring a dancer's eye to questions of pose and motion.
