@@ -30,6 +30,24 @@
 "KDD":
   url: https://kdd.org/
 
+"ACL":
+  url: https://aclanthology.org/venues/acl/
+
+"EMNLP":
+  url: https://aclanthology.org/venues/emnlp/
+
+"NAACL":
+  url: https://aclanthology.org/venues/naacl/
+
+"EACL":
+  url: https://aclanthology.org/venues/eacl/
+
+"COLING":
+  url: https://aclanthology.org/venues/coling/
+
+"CoNLL":
+  url: https://aclanthology.org/venues/conll/
+
 "CVPR":
   url: https://cvpr.thecvf.com/
 
@@ -57,6 +75,9 @@
 
 "IJCV":
   url: https://link.springer.com/journal/11263
+
+"TACL":
+  url: https://aclanthology.org/venues/tacl/
 
 "JMLR":
   url: https://jmlr.org/
