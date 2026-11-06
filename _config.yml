@@ -171,16 +171,14 @@ disqus_shortname: al-folio # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+  - name: inzva
     categories: [external-posts]
-    tags: [medium]
-  - name: Google Blog
+    tags: [inzva, ai-projects]
     posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
-    categories: [external-posts]
-    tags: [google]
+      - url: https://inzva.com/reports/2024/ai-projects-8
+        published_date: 2024-05-18
+      - url: https://inzva.com/reports/2025/ai-projects-9
+        published_date: 2025-09-27
 
 # -----------------------------------------------------------------------------
 # Newsletter
