@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><a href="https://image.ceng.metu.edu.tr/">ImageLab</a></p>
+    <p>ImageLab</p>
     <p>Department of Computer Engineering</p>
     <p>Middle East Technical University</p>
     <p>Ankara, Turkey</p>
