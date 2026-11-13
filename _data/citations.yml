@@ -1,6 +1,10 @@
 metadata:
   last_updated: '2026-11-13'
 papers:
+  nJqH9sgAAAAJ:qjMakFHDy7sC:
+    citations: 0
+    title: 'HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields'
+    year: '2026'
   nJqH9sgAAAAJ:9yKSN-GCB0IC:
     citations: 1
     title: 'CROssBARv2: A unified computational framework for heterogeneous biomedical data representation and LLM-driven exploration'
