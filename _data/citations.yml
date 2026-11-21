@@ -1,16 +1,16 @@
 metadata:
-  last_updated: '2026-11-13'
+  last_updated: '2026-11-21'
 papers:
+  nJqH9sgAAAAJ:9yKSN-GCB0IC:
+    citations: 2
+    title: 'CROssBARv2: A unified computational framework for heterogeneous biomedical data representation and LLM-driven exploration'
+    year: '2026'
   nJqH9sgAAAAJ:qjMakFHDy7sC:
     citations: 0
     title: 'HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields'
     year: '2026'
-  nJqH9sgAAAAJ:9yKSN-GCB0IC:
-    citations: 1
-    title: 'CROssBARv2: A unified computational framework for heterogeneous biomedical data representation and LLM-driven exploration'
-    year: '2026'
   nJqH9sgAAAAJ:u-x6o8ySG0sC:
-    citations: 40
+    citations: 42
     title: 'OmniPath: integrated knowledgebase for multi-omics analysis'
     year: '2026'
   nJqH9sgAAAAJ:u5HHmVD_uO8C:
